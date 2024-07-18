@@ -1,0 +1,273 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.body {
+  background-color: rgba(41, 44, 62, 0.3882352941); /*Fonfo de pantalla*/
+}
+
+p {
+  color: black; /*Color del texto para los párrafos*/
+  text-align: justify;
+  padding: 10px;
+  margin: 10px 20px;
+}
+
+h1 { /*DISPOSICIÓN DE LOS TITULOS DE LAS PÁGINAS*/
+  display: flex;
+  justify-content: center;
+  padding: 20px 5px;
+  margin: 25px;
+}
+
+.header {
+  background-color: #F7CC59; /*Fonfo del header*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 85x;
+  padding: 10px 10%;
+}
+
+.header .links li {
+  display: inline-block;
+  padding: 0 20px;
+  text-align: left;
+  list-style: none;
+  text-decoration: none;
+}
+
+.header .logo img {
+  height: 80px;
+  width: auto;
+}
+
+.header .logo {
+  cursor: pointer; /*Para que aparezca la mano al pasar sobre el logo de la imagen*/
+  transition: all 0.3s;
+}
+
+.header .logo img:hover {
+  transform: scale(1.1);
+}
+
+.header li:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+  color: #ffffff;
+}
+
+.header .links a {
+  font-size: 700;
+  color: rgb(0, 0, 0); /*Color del texto que lleva a las distintas paginas*/
+  transform: scale(1.5);
+  list-style: none;
+  text-decoration: none;
+}
+
+/*IMAGEN PAGINA SOBRE MI*/
+.foto-sobre-mi {
+  display: block;
+  margin: auto;
+  width: 286px;
+  height: auto;
+  border: solid black;
+  background-color: #f0f0f0;
+  padding: 5px;
+}
+
+/*GRID PAISAJE*/
+.imagenes-paisaje img {
+  width: 100%;
+  height: auto;
+  border: solid black;
+  background-color: #f0f0f0;
+  padding: 5px;
+}
+
+.imagenes-paisaje {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, auto);
+  gap: 10px;
+  width: 100%;
+  margin: auto;
+}
+
+/*POSICIONES DE IMAGENES PAISAJES*/
+.imagen-paisaje-7 {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.imagen-paisaje-8 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+.imagen-paisaje-9 {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+.imagen-paisaje-1 {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+.imagen-paisaje-4 {
+  grid-column: 3/4;
+  grid-row: 2/3;
+}
+
+.imagen-paisaje-11 {
+  grid-column: 1/2;
+  grid-row: 3/4;
+}
+
+.imagen-cielo-6 {
+  grid-column: 3/4;
+  grid-row: 3/4;
+}
+
+.imagen-paisaje-6 {
+  grid-column: 2/3;
+  grid-row: 4/5;
+}
+
+/*GRID ANIMALES*/
+.imagenes-animales img {
+  width: 550px;
+  height: auto; /* Altura deseada para las imágenes */
+  margin: 80px;
+  border: solid black;
+  background-color: #f0f0f0;
+  padding: 5px;
+}
+
+/*GRID NOCTURO*/
+.imagenes-nocturno {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, auto);
+  gap: 10px;
+  width: 80%;
+  margin: auto;
+}
+
+.imagen-nocturno-11 {
+  grid-area: 1/2/2/3;
+}
+
+.imagen-nocturno-3 {
+  grid-area: 1/1/2/2;
+}
+
+.imagen-nocturno-6 {
+  grid-area: 2/2/3/3;
+}
+
+.imagen-nocturno-19 {
+  grid-area: 2/3/3/4;
+}
+
+.imagen-nocturno-9 {
+  grid-area: 3/2/4/3;
+}
+
+.imagen-nocturno-10 {
+  grid-area: 4/2/5/3;
+}
+
+.imagen-nocturno-8 {
+  grid-area: 5/2/6/3;
+}
+
+.imagenes-nocturno img {
+  width: 100%;
+  height: auto;
+  border: 1px solid black;
+  padding: 5px;
+  background-color: #f0f0f0;
+}
+
+/*FOOTER*/
+.col-md-4 ul li a {
+  list-style: none;
+  text-decoration: none;
+  color: black;
+}
+
+.footer {
+  background-color: #3B5998;
+  padding: 20px;
+  margin: 10px 20px;
+}
+
+/*CAMBIOS PARA LA PANTALLA DE 900PX DE ANCHO*/
+@media (max-width: 900px) {
+  .header {
+    justify-content: center;
+  }
+  .header .links {
+    margin-top: 10px;
+    text-align: center;
+  }
+  .header .links li {
+    display: block;
+    padding: 10px 0;
+  }
+  .header .links a {
+    color: black;
+    font-size: 16px;
+    transition: color 0.3s;
+  }
+  .header .links a:hover {
+    color: rgb(60, 45, 218);
+  }
+}
+@media (max-width: 800px) {
+  .imagenes-nocturno,
+  .imagenes-paisaje,
+  .imagen-sobre-mi {
+    display: block; /* Cambiamos a display block para que las imágenes se muestren una debajo de la otra */
+  }
+}
+@media (max-width: 750px) {
+  .header .links.d-none {
+    display: none; /* Ocultar texto en pantallas pequeñas */
+  }
+  .header .links.d-flex {
+    display: flex; /* Mostrar iconos en pantallas pequeñas */
+    justify-content: center; /* Centrar los iconos horizontalmente */
+  }
+  .header .links.d-flex li {
+    margin: 25px; /* Espacio entre los iconos */
+  }
+  .header .links.d-flex a {
+    font-size: 20px; /* Tamaño de los iconos */
+    margin: 20px;
+  }
+}
+/* Media query para mostrar los iconos en lugar de texto en pantallas pequeñas */
+@media (max-width: 450px) {
+  .header .links.d-none {
+    display: none; /* Ocultar texto en pantallas pequeñas */
+  }
+  .header .links.d-flex {
+    display: flex; /* Mostrar iconos en pantallas pequeñas */
+    justify-content: center; /* Centrar los iconos horizontalmente */
+  }
+  .header .links.d-flex li {
+    margin: 15px; /* Espacio entre los iconos */
+  }
+  .header .links.d-flex a {
+    font-size: 20px; /* Tamaño de los iconos */
+    margin: 20px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
